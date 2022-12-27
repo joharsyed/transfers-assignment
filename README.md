@@ -1,9 +1,9 @@
 ### Assumptions:
 
 - It's assumed that the transfer input starts from a source account id. The application will not accept the input otherwise.
+- The input containing the transfers expects the transfers' fields in this order: SOURCE_ACCT, DESTINATION_ACCT, AMOUNT, DATE, TRANSFERID.
 - If there's more than one account accessed most frequently as source accounts (excluding account having id 0), then all of them will be fetched.
 - If there's more than one account with the highest balance but equal (excluding account having id 0), then all of them will be fetched.
-- The input containing the transfers expects the transfers' fields in this order: SOURCE_ACCT, DESTINATION_ACCT, AMOUNT, DATE, TRANSFERID
 
 ### Execution
 
