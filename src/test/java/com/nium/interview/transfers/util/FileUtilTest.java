@@ -2,6 +2,7 @@ package com.nium.interview.transfers.util;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.nio.file.Paths;
 import java.util.List;
 
 import com.nium.interview.transfers.common.AbstractTest;
@@ -27,12 +28,12 @@ class FileUtilTest extends AbstractTest {
 
     @Test
     void getPathByFileNameInResourceFolder() {
-        Assertions.assertEquals("src/main/resources/accounts.txt", FileUtil.getPathByFileNameInResourceFolder("accounts.txt").toString());
+        Assertions.assertEquals(Paths.get("src", "main", "resources", "accounts.txt").toString(), FileUtil.getPathByFileNameInResourceFolder("accounts.txt").toString());
     }
 
     @Test
     void getPathByFileNameInResourceFolder_nonExistingFile() {
-        Assertions.assertEquals("src/main/resources/non_existing_file.txt", FileUtil.getPathByFileNameInResourceFolder("non_existing_file.txt").toString());
+        Assertions.assertEquals(Paths.get("src", "main", "resources", "non_existing_file.txt").toString(), FileUtil.getPathByFileNameInResourceFolder("non_existing_file.txt").toString());
     }
 
     @Test

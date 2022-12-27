@@ -45,18 +45,18 @@ class ResultServiceTest extends AbstractTest {
     @Test
     void writeResults_providedFileName() {
         List<String> resultLines = FileUtil.readLinesFromFile("result.txt");
-        Assertions.assertFalse(resultLines.contains("334455 - 85.81"));
+        Assertions.assertFalse(resultLines.contains("334455"));
         resultService.writeResultToFile(result, "result.txt");
         resultLines = FileUtil.readLinesFromFile("result.txt");
-        Assertions.assertTrue(resultLines.contains("334455 - 85.81"));
+        Assertions.assertTrue(resultLines.contains("334455"));
     }
 
     @Test
     void writeResults_fileNameMissingFileExt() {
         List<String> resultLines = FileUtil.readLinesFromFile("results");
-        Assertions.assertFalse(resultLines.contains("334455 - 85.81"));
+        Assertions.assertFalse(resultLines.contains("334455"));
         resultService.writeResultToFile(result, "results");
         resultLines = FileUtil.readLinesFromFile("results");
-        Assertions.assertTrue(resultLines.contains("334455 - 85.81"));
+        Assertions.assertTrue(resultLines.contains("334455"));
     }
 }
